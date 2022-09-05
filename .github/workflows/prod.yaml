@@ -1,0 +1,45 @@
+name: master
+on: 
+  push:
+    branches:
+      - master
+    paths:
+      - server/**
+      
+env:
+
+jobs:
+  semantic_release:
+    name: semantic release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: none 
+      issues: write
+      packages: write
+    environment: master
+    steps:
+      - name: Checkout branch "master"
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          ref: "master"
+          fetch-depth: 0
+      - name: create a release
+        run: |
+          npm i -g semantic-release
+          npm i -g @semantic-release/changelog
+          npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+          
+      - name: push changes to github
+        run: |
+          git config user.name "${{ secrets.GH_ADMIN_USERNAME }}"
+          git config user.email "${{ secrets.GH_ADMIN_EMAIL }}"
+          git remote set-url origin https://${{secrets.GH_ADMIN_USERNAME}}:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY
+          git add .
+          git commit -m"fix: changelog and package.json release[skip ci]"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_ADMIN_TOKEN }} 
