@@ -1,3 +1,10 @@
+## [1.0.1-beta.1](https://github.com/prashant9428/semantic-versioning/compare/v1.0.0...v1.0.1-beta.1) (2022-09-05)
+
+
+### Bug Fixes
+
+* changelog and package.json release[skip ci] ([ef41432](https://github.com/prashant9428/semantic-versioning/commit/ef41432b15392a0b6bccaab607a35e2da74cf863))
+
 # 1.0.0 (2022-09-05)
 
 
