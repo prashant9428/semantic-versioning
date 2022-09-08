@@ -1,3 +1,11 @@
+## [1.0.2-beta.2](https://github.com/prashant9428/semantic-versioning/compare/v1.0.2-beta.1...v1.0.2-beta.2) (2022-09-08)
+
+
+### Bug Fixes
+
+* changelog and package.json release[skip ci] ([22b9a44](https://github.com/prashant9428/semantic-versioning/commit/22b9a445903de59777bb7868774ce4d5824a0ce7))
+* removed space ([5c7012e](https://github.com/prashant9428/semantic-versioning/commit/5c7012ea8ed9e524fa8ead7f23bc13cbb2cb4f8b))
+
 ## [1.0.2-beta.1](https://github.com/prashant9428/semantic-versioning/compare/v1.0.1...v1.0.2-beta.1) (2022-09-08)
 
 
